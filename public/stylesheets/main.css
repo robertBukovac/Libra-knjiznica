@@ -1,0 +1,35 @@
+
+html {
+    position: relative;
+    min-height: 100%;
+  }
+body{
+    background-image: url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1153&q=80);
+    margin-bottom: 60px;
+}
+.thumbnail img{
+    width: 100%;
+}
+.thumbnail {
+    padding: 0%;
+}
+.thumbnail .caption-full {
+    padding: 9px;
+}
+#delete-form{
+    display: inline;
+}
+.lead{
+    color:#fff;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 40px;
+    background-color: #f5f5f5;
+  }
+.text-muted{
+    padding-top: 10px;
+}

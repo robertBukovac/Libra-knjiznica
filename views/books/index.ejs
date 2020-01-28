@@ -1,0 +1,45 @@
+<%- include("../partials/header") %>
+
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1>Dobrodošli u Libru!</h1>
+             <p>Vaša najbolja online-knjižnica</p>
+             <% if(currentUser && currentUser.isAdmin){ %>
+             <p>
+                <a class="btn btn-primary btn-large" href="/books/new">Dodaj novu knjigu</a>
+             </p>
+             <% }%>
+             <p>
+                 <form action="/books" method="GET" class="form-inline">
+                     <div class="form-group">
+                         <input type="text" name="search" placeholder="Pretrazivanje knjiga..." class="form-control">
+                         <input type="submit" name="earch" class="btn btn-default">
+                     </div>
+                 </form>
+             </p>
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <div class="col-md-12">
+            <% if(noMatch !== undefined) { %>
+                <h3><%= noMatch %></h3>
+            <% } %>
+        </div>
+        <% books.forEach(function(book){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                   <img src="<%= book.image %>">
+                   <div class="caption">
+                       <h4><%= book.name %></h4>
+                   </div>
+                   <p>
+                       <a href="/books/<%= book._id %>" class="btn btn-primary">Više informacija</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+<%- include("../partials/footer") %>
