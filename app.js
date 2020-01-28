@@ -10,7 +10,7 @@ var express     = require("express"),
     Comment = require("./models/comment"),
     User = require("./models/user"),
     opn = require("open");
-    PORT = process.env.PORT || 3000;
+    PORT = process.env.MONGODB_URI || 3000;
     //requiring routes
 var commentRoutes = require("./routes/comments"),
     bookRoutes = require("./routes/books"),
