@@ -23,7 +23,7 @@ router.get("/register",function(req,res){
 //sign up logic
 router.post("/register",function(req,res){
     var newUser = new User({username:req.body.username});
-    eval(require('locus'))
+    //eval(require('locus'))
     if(req.body.adminCode === "secretcode123"){
         newUser.isAdmin = true;
     }

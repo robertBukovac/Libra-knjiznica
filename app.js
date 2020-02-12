@@ -15,7 +15,7 @@ var commentRoutes = require("./routes/comments"),
     bookRoutes = require("./routes/books"),
     indexRoutes = require("./routes/index")
  
-mongoose.connect("mongodb://localhost/libra01",{useNewUrlParser:true,useUnifiedTopology:true});
+mongoose.connect("mongodb+srv://robert123:robert123@libra-knjiznica-lz0sx.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true});
 
 
 app.use(bodyParser.urlencoded({extended: true}));
