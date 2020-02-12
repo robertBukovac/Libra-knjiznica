@@ -10,13 +10,12 @@ var express     = require("express"),
     Comment = require("./models/comment"),
     User = require("./models/user"),
     opn = require("open");
-    PORT = process.env.MONGODB_URI || 3000;
     //requiring routes
 var commentRoutes = require("./routes/comments"),
     bookRoutes = require("./routes/books"),
     indexRoutes = require("./routes/index")
  
-mongoose.connect("mongodb+srv://robertBukovac:robertBukovac@cluster0-dh2rp.mongodb.net/test?retryWrites=true&w=majority ",{useNewUrlParser:true,useUnifiedTopology:true});
+mongoose.connect("mongodb://localhost/libra01",{useNewUrlParser:true,useUnifiedTopology:true});
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -53,6 +52,6 @@ app.use(indexRoutes);
 app.use(commentRoutes);
 app.use(bookRoutes);
 
-app.listen(PORT, function(){
+app.listen(3000, function(){
    console.log("The Libra Server Has Started!");
 });
