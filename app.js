@@ -9,7 +9,9 @@ var express     = require("express"),
     Book  = require("./models/book"),
     Comment = require("./models/comment"),
     User = require("./models/user"),
-    opn = require("open");
+    opn = require("open"),
+    PORT = process.env.PORT || 3000;
+
     //requiring routes
 var commentRoutes = require("./routes/comments"),
     bookRoutes = require("./routes/books"),
@@ -52,6 +54,6 @@ app.use(indexRoutes);
 app.use(commentRoutes);
 app.use(bookRoutes);
 
-app.listen(3000, function(){
+app.listen(PORT, function(){
    console.log("The Libra Server Has Started!");
 });
