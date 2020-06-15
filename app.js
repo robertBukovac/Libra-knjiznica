@@ -19,7 +19,6 @@ var commentRoutes = require("./routes/comments"),
  
 mongoose.connect("mongodb+srv://robert123:robert123@libra-knjiznica-lz0sx.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true});
 
-
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 //seedDB();

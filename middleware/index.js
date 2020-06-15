@@ -11,7 +11,7 @@ middlewareObj.checkBookOwnership = function(req, res, next) {
                req.flash('error','Knjiga nije pronađena');
                res.redirect('back');
            }  else {
-               // does user own the campground?
+               // does user own the book?
             if(foundBook.author.id.equals(req.user._id) || req.user.isAdmin ) {
                 next();
             } else {
